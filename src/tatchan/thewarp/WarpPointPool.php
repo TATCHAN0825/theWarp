@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace tatchan\thewarp;
 
 use InvalidArgumentException;
-use JetBrains\PhpStorm\Pure;
 use pocketmine\permission\Permissible;
 
 final class WarpPointPool {
@@ -44,7 +43,7 @@ final class WarpPointPool {
         return self::$warpPoints;
     }
 
-    #[Pure] public static function get(string $name): ?WarpPoint {
+    public static function get(string $name): ?WarpPoint {
         return self::getAll()[$name] ?? null;
     }
 
