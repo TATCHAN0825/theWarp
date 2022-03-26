@@ -1,0 +1,4 @@
+name: theWarp
+version: 0.0.1
+main: tatchan\thewarp\Main
+api: 4.0.0
