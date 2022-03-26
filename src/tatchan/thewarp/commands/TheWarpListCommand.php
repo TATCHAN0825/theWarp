@@ -6,8 +6,8 @@ namespace tatchan\thewarp\commands;
 use CortexPE\Commando\BaseSubCommand;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat;
-use tatchan\theWarp\WarpPoint;
-use tatchan\theWarp\WarpPointPool;
+use tatchan\thewarp\WarpPoint;
+use tatchan\thewarp\WarpPointPool;
 
 class TheWarpListCommand extends BaseSubCommand {
     public function __construct() {

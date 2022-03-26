@@ -6,7 +6,7 @@ namespace tatchan\thewarp\Repositories;
 use pocketmine\utils\Config;
 use pocketmine\world\Position;
 use tatchan\thewarp\Utils;
-use tatchan\theWarp\WarpPoint;
+use tatchan\thewarp\WarpPoint;
 
 class YamlUserRepository implements WarpPointRepository {
     private Config $config;

@@ -12,8 +12,8 @@ use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 use pocketmine\world\Position;
 use tatchan\thewarp\Utils;
-use tatchan\theWarp\WarpPoint;
-use tatchan\theWarp\WarpPointPool;
+use tatchan\thewarp\WarpPoint;
+use tatchan\thewarp\WarpPointPool;
 
 class TheWarpAddCommand extends BaseSubCommand {
     public function __construct() {

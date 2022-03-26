@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace tatchan\thewarp\Repositories;
 
-use tatchan\theWarp\WarpPoint;
+use tatchan\thewarp\WarpPoint;
 
 interface WarpPointRepository {
     /**

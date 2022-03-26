@@ -9,7 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\plugin\Plugin;
 use pocketmine\utils\TextFormat;
-use tatchan\theWarp\WarpPointPool;
+use tatchan\thewarp\WarpPointPool;
 
 class TheWarpCommand extends BaseCommand {
 

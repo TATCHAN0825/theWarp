@@ -7,7 +7,7 @@ use CortexPE\Commando\args\RawStringArgument;
 use CortexPE\Commando\BaseSubCommand;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat;
-use tatchan\theWarp\WarpPointPool;
+use tatchan\thewarp\WarpPointPool;
 
 class TheWarpRemoveCommand extends BaseSubCommand {
     public function __construct() {
