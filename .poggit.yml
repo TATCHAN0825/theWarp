@@ -8,5 +8,5 @@ projects:
       - src: CortexPE/Commando/Commando
         version: 3.0.0
         branch: PM4
-      - src: Muqsit/SimplePacketHandler/PacketHandler
-        version: 0.1.0
+      - src: Muqsit/SimplePacketHandler/SimplePacketHandler
+        version: ^0.0.1
