@@ -1,4 +1,28 @@
 name: theWarp
-version: 0.0.1
+version: 1.0.0
 main: tatchan\thewarp\Main
 api: 4.0.0
+permissions:
+  thewarp.commands.thewarp:
+    default: true
+  thewarp.commands.thewarpmanager:
+    default: op
+  thewarp.commands.thewarp.list:
+    default: true
+  thewarp.commands.thewarp.add:
+    default: op
+  thewarp.commands.thewarp.remove:
+    default: op
+  thewarp.list:
+    default: true
+  thewarp.add:
+    default: op
+  thewarp.remove:
+    default: op
+  thewarp.warp.public:
+    default: true
+  thewarp.warp.private:
+    default: op
+
+
+
