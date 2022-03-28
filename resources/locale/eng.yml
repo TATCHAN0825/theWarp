@@ -8,7 +8,7 @@ tatchan:
       TheWarpAddCommand:
         description: Add a warp
         world_notfound: "%{world} did not exist"
-        added: "%{name}is created"
+        added: "%{name} is created"
       TheWarpCommand:
         description: I'll warp
         error1: |-
@@ -26,4 +26,4 @@ tatchan:
           No points found
           Or you do not have the authority
           Please check the name and try again
-        remove: "%{name}Was deleted"
+        remove: "%{name} Was deleted"
