@@ -26,6 +26,7 @@ use CortexPE\Commando\args\BooleanArgument;
 use CortexPE\Commando\args\RawStringArgument;
 use CortexPE\Commando\args\Vector3Argument;
 use CortexPE\Commando\BaseSubCommand;
+use pjz9n\libi18n\LangHolder;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
@@ -36,14 +37,14 @@ use tatchan\thewarp\WarpPointPool;
 
 class TheWarpAddCommand extends BaseSubCommand {
     public function __construct() {
-        parent::__construct("add", "ワープを追加する", ["a"]);
+        parent::__construct("add", LangHolder::t(".description"), ["a"]);
     }
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args): void {
         if ($sender->hasPermission("thewarp.add")) {
             if (array_key_exists("position", $args) && array_key_exists("world", $args)) {
                 if (($world = Utils::getWorldByNameWithLoad($args["world"])) === null) {
-                    $sender->sendMessage(TextFormat::RED . "{$args["world"]}は存在しませんでした");
+                    $sender->sendMessage(LangHolder::t(TextFormat::RED . "%.world_notfound", ["world" => $args["world"]]));
                     return;
                 }
                 $position = Position::fromObject($args["position"], $world);
@@ -55,7 +56,7 @@ class TheWarpAddCommand extends BaseSubCommand {
             }
 
             WarpPointPool::add(new WarpPoint($args["name"], $position, $args["public"] ?? true));
-            $sender->sendMessage(TextFormat::GREEN . "{$args["name"]}を作成しました");
+            $sender->sendMessage(LangHolder::t(TextFormat::GREEN . "%.added", ["name" => $args["name"]]));
         }
 
 

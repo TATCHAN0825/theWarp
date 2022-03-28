@@ -23,12 +23,13 @@ declare(strict_types=1);
 namespace tatchan\thewarp\commands;
 
 use CortexPE\Commando\BaseCommand;
+use pjz9n\libi18n\LangHolder;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\Plugin;
 
 class TheWarpManagerCommand extends BaseCommand {
     public function __construct(Plugin $plugin) {
-        parent::__construct($plugin, "thewarpmanager", "thewarpmanager", ["twg"]);
+        parent::__construct($plugin, "thewarpmanager", LangHolder::t(".description"), ["twg"]);
     }
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args): void {

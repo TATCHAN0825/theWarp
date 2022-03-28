@@ -24,6 +24,8 @@ namespace tatchan\thewarp;
 
 use CortexPE\Commando\exception\HookAlreadyRegistered;
 use CortexPE\Commando\PacketHooker;
+use pjz9n\libi18n\LangHolder;
+use pjz9n\libi18n\LangInstance;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use tatchan\thewarp\commands\TheWarpCommand;
@@ -46,13 +48,16 @@ class Main extends PluginBase {
         if (!PacketHooker::isRegistered()) {
             PacketHooker::register($this);
         }
-        Server::getInstance()->getCommandMap()->register($this->getName(), new TheWarpCommand($this));
-        Server::getInstance()->getCommandMap()->register($this->getName(), new TheWarpManagerCommand($this));
+
         self::$repository = new YamlUserRepository(Path::join($this->getDataFolder(), "warps.yml"));
         WarpPointPool::init(self::$repository->getAll());
+        LangHolder::init(new LangInstance($this->getServer()->getLanguage()->getLang(), "eng", Path::join($this->getFile(), "resources", "locale"), $this->getLogger()));
+        Server::getInstance()->getCommandMap()->register($this->getName(), new TheWarpCommand($this));
+        Server::getInstance()->getCommandMap()->register($this->getName(), new TheWarpManagerCommand($this));
     }
 
     protected function onDisable(): void {
+
         self::$repository->storeAll(WarpPointPool::getAll());
         self::$repository->save();
     }

@@ -1,0 +1,29 @@
+_:
+  name: English
+  error:
+    player_only: Run in Game
+  tatchan:
+    thewarp:
+      commands:
+        TheWarpAddCommand:
+          description: Add a warp
+          world_notfound: "%{world} did not exist"
+          added: "%{name}is created"
+        TheWarpCommand:
+          description: I'll warp
+          error1: |-
+            No points found
+            Or you do not have the authority
+            Please check the name and try again
+          teleport: "Teleported to %{name}"
+        TheWarpListCommand:
+          description: Display the warp list
+        theWarpManagerCommand:
+          description: Command to manage warp
+        theWarpRemoveCommand:
+          description: Remove the warp
+          error1: |-
+            No points found
+            Or you do not have the authority
+            Please check the name and try again
+          remove: "%{name}Was deleted"

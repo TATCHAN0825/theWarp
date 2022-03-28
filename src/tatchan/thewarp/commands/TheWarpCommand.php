@@ -24,6 +24,7 @@ namespace tatchan\thewarp\commands;
 
 use CortexPE\Commando\args\RawStringArgument;
 use CortexPE\Commando\BaseCommand;
+use pjz9n\libi18n\LangHolder;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\plugin\Plugin;
@@ -33,23 +34,23 @@ use tatchan\thewarp\WarpPointPool;
 class TheWarpCommand extends BaseCommand {
 
     public function __construct(Plugin $plugin) {
-        parent::__construct($plugin, "thewarp", "ワープをするよ", ["warp", "tw"]);
+        parent::__construct($plugin, "thewarp", LangHolder::t(".description"), ["warp", "tw"]);
     }
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args): void {
         if (!($sender instanceof Player)) {
-            $sender->sendMessage(TextFormat::RED . "ゲーム内で実行してください");
+            $sender->sendMessage(LangHolder::t(TextFormat::RED . "%error.player_only"));
             return;
         }
         $point = WarpPointPool::get($args["name"]);
 
         if ($point === null || (!$point->canWarp($sender))) {
-            $sender->sendMessage(TextFormat::RED . implode(TextFormat::EOL, ["ポイントが見つかりませんでした", "又は権限がありません", "名前を確認して再度お試しください"]));
+            $sender->sendMessage(LangHolder::t(TextFormat::RED . "%.error1"));
             return;
         }
 
         $sender->teleport($point->getPosition());
-        $sender->sendMessage(TextFormat::GREEN . "{$point->getName()}にてテレポートしました");
+        $sender->sendMessage(LangHolder::t(TextFormat::GREEN . "%.teleport", ["name" => $point->getName()]));
 
     }
 

@@ -1,0 +1,32 @@
+_:
+  name: 日本語
+error:
+  player_only: ゲーム内で実行してください
+tatchan:
+  thewarp:
+    commands:
+      TheWarpAddCommand:
+        description: ワープを追加する
+        world_notfound: "%{world}は存在しませんでした"
+        added: "%{name}を作成しました"
+      TheWarpCommand:
+        description: ワープをするよ
+        error1: |-
+          ポイントが見つかりませんでした
+          又は権限がありません
+          名前を確認して再度お試しください
+        teleport: "%{name}にテレポートしました"
+      TheWarpListCommand:
+        description: ワープ一覧を表示する
+      TheWarpManagerCommand:
+        description: warpを管理するコマンド
+      TheWarpRemoveCommand:
+        description: ワープを削除する
+        error1: |-
+          ポイントが見つかりませんでした
+          又は権限がありません
+          名前を確認して再度お試しください
+        remove: "%{name}を削除しました"
+
+
+        
