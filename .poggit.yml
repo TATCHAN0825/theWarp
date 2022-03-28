@@ -10,5 +10,5 @@ projects:
         branch: PM4
       - src: Muqsit/SimplePacketHandler/SimplePacketHandler
         version: ^0.0.1
-      - src: pjz9n/libi18n/libi18n
+      - src: pjz9n-pm-pl/libi18n/libi18n
         version: 1.0.3
